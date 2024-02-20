@@ -1,0 +1,78 @@
+﻿@* @{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Library Manager</h1>
+    <p>Teste de Pagina</p>
+</div> *@
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+   
+    <style>
+
+        
+    </style>
+</head>
+<body class="bg-gradient-primary">
+    <div class="container">
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-6">
+                                
+                            </div>
+                            <div class="col-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Bem Vindo</h1>
+                                    </div>
+                                    <form class="user" action="@Url.Action("Index","Login")" method="post" >
+                                        <div class="form-group">
+                                            <input type="email" class="form-control form-control-user" name="correo" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" name="clave" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            @{if (ViewBag.Error != null)
+                                                {
+                                                    <div class="alert alert-danger" role="alert">
+                                                        @ViewBag.Error
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                        <button class="btn btn-primary btn-block btn-user" asp-area="" asp-controller="Home" asp-action="Index" type="submit">Entrar</button>
+
+                                        
+                                    </form>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+</html>
+
+            
